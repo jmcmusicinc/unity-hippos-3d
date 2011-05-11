@@ -64,6 +64,10 @@
      <Compile Include="Assets\Resources\Menu\Behaviours\LoadLevelAction.cs" />
      <Compile Include="Assets\Resources\Menu\Behaviours\PlayAudioAction.cs" />
      <Compile Include="Assets\Resources\Menu\Behaviours\ShowMenuAction.cs" />
+     <Compile Include="Assets\TerrainToolkit\Editor\TerrainToolkitEditor.cs" />
+     <None Include="Assets\TerrainToolkit\Read me.txt" />
+     <Compile Include="Assets\TerrainToolkit\TerrainToolkit.cs" />
+     <None Include="Assets\TerrainToolkit\TerrainToolkitEnums.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
