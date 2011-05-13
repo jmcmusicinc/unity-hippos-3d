@@ -1,31 +1,33 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Transform))]
 public class Spawner : MonoBehaviour {
 	
 	public int Amount;
 	
 	public float Delay;
 	
-	public Transform Original;
+	public Transform Prefab;
 	
-	private int _current = 0;
+	private int _current;
 	
 	void Start()
 	{
-		Spawn(Original, this.transform.position, Quaternion.identity);
+		StartCoroutine("Spawn");
 	}
 	
-	IEnumerator Spawn(Object entity, Vector3 location, Quaternion rotation)
+	IEnumerator Spawn()
 	{
-		print("Spawn");
-//		while(_current < Amount)
-//		{
-//			Instantiate(entity, location, rotation);
-//			_current++;
-		yield return new WaitForSeconds(Delay);
-//		}
+		while(_current < Amount)
+		{
+			var o = Instantiate(Prefab, this.transform.position, Random.rotation);
+			_current++;
+			
+			var ball = o as GameObject;
+			if(ball != null && ball.rigidbody != null)
+				ball.rigidbody.AddForce(ball.transform.position * 500, ForceMode.Impulse);
+			
+			yield return new WaitForSeconds(Delay);
+		}
 	}
-	
 }
