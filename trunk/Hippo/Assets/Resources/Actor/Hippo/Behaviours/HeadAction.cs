@@ -7,8 +7,11 @@ public class HeadAction : MonoBehaviour {
     {
         Debug.Log("Collision");
 
+     
+
         foreach (ContactPoint contact in collision.contacts)
         {
+            GameObjectDestroy.Destroy(contact.otherCollider);
             Debug.DrawRay(contact.point, contact.normal, Color.white);
         }
 
