@@ -16,7 +16,7 @@ public class AudioStateSelector : MonoBehaviour
         _preferences = _gameRepository.Get().Preferences;
     }
 
-    public void OnMouseDown()
+    void OnMouseDown()
 	{
 	    ToggleAudioState();
 	}
@@ -26,7 +26,7 @@ public class AudioStateSelector : MonoBehaviour
         _preferences.IsAudioEnabled = !_preferences.IsAudioEnabled;
     }
 
-    public void Update()
+    void Update()
     {
         Limit.ByFrames(UpdateFrameRate, () => UpdateText());
     }

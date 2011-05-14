@@ -7,25 +7,24 @@ public class Spawner : MonoBehaviour {
 	
 	public float Delay;
 	
-	public Transform Prefab;
+	public float ScatterForce;
+	
+	public GameObject Prefab;
 	
 	private int _current;
 	
-	void Start()
-	{
+	void Start() {
 		StartCoroutine("Spawn");
 	}
 	
-	IEnumerator Spawn()
-	{
+	IEnumerator Spawn()	{
 		while(_current < Amount)
 		{
-			var o = Instantiate(Prefab, this.transform.position, Random.rotation);
+			var clone = (GameObject)Instantiate(Prefab, this.transform.position, Random.rotation);
 			_current++;
-			
-			var ball = o as GameObject;
-			if(ball != null && ball.rigidbody != null)
-				ball.rigidbody.AddForce(ball.transform.position * 500, ForceMode.Impulse);
+				
+			if(clone != null && clone.rigidbody != null)
+				clone.rigidbody.AddForce(clone.transform.forward * ScatterForce, ForceMode.Impulse);
 			
 			yield return new WaitForSeconds(Delay);
 		}

@@ -5,8 +5,7 @@ public class InputAction : MonoBehaviour
 {
     public float fireRate = 0.5F;
     public string buttonKeyBinding = "Hippo 1";
-	private float _nextFire = 0.0F;
-    private AnimationState _hippoAnimState;
+	private AnimationState _hippoAnimState;
     public AnimationClip munchAnimation;
 
     public void Start()
@@ -22,13 +21,5 @@ public class InputAction : MonoBehaviour
             this.animation.Play(munchAnimation.name, AnimationPlayMode.Stop);
             animation.Rewind(munchAnimation.name);
         }
-
-        /*
-        if (Input.GetButton(buttonKeyBinding) && Time.time > _nextFire)
-		{
-            _nextFire = Time.time + fireRate;
-			Debug.Log("Fired");
-            animation.Play("Default Take");
-        }*/
     }
 }
