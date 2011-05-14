@@ -59,6 +59,7 @@
      <Compile Include="Assets\Resources\Domain\Game.cs" />
      <Compile Include="Assets\Resources\Domain\GameRepository.cs" />
      <Compile Include="Assets\Resources\Domain\Preferences.cs" />
+     <Compile Include="Assets\Resources\Island\Behaviours\InGameMenuInput.cs" />
      <Compile Include="Assets\Resources\Island\Behaviours\Spawner.cs" />
      <Compile Include="Assets\Resources\Menu\Behaviours\AudioStateSelector.cs" />
      <Compile Include="Assets\Resources\Menu\Behaviours\ExitApplicationAction.cs" />
