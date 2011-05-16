@@ -3,16 +3,18 @@ using System.Collections;
 
 public class Hippo
 {
-    public Hippo(string keyBinding)
+    public Hippo(Tag tag, string identity)
     {
-        KeyBinding = keyBinding;
+        this.Tag = tag;
+		this.Identity = identity;
     }
 
-    public void UpdateBalls()
+    public void EatBall()
     {
-        Balls++;
+        BallsEaten++;
     }
 
-    public string KeyBinding { get; private set; }
-    public int Balls { get; private set; }
+    public Tag Tag { get; private set; }
+	public string Identity { get; private set; }
+    public int BallsEaten { get; private set; }
 }

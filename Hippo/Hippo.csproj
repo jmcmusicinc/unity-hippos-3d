@@ -37,31 +37,32 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
 	<Reference Include="Boo.Lang">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Mono/lib/mono/unity/Boo.Lang.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Mono/lib/mono/unity/Boo.Lang.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityScript">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Mono/lib/mono/unity/UnityScript.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Mono/lib/mono/unity/UnityScript.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Engine\AnimationExtensions.cs" />
      <Compile Include="Assets\Engine\GameObjectDestroy.cs" />
      <Compile Include="Assets\Engine\Limit.cs" />
-     <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\HeadAction.cs" />
-     <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\InputAction.cs" />
+     <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\EatBallAction.cs" />
+     <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\GameInteraction.cs" />
+     <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\HippoController.cs" />
      <Compile Include="Assets\Resources\Common\Scores\Scoring.cs" />
      <Compile Include="Assets\Resources\Common\SetAudioLevelByPreferences.cs" />
      <Compile Include="Assets\Resources\Domain\Game.cs" />
      <Compile Include="Assets\Resources\Domain\GameRepository.cs" />
      <Compile Include="Assets\Resources\Domain\Hippo.cs" />
-     <Compile Include="Assets\Resources\Domain\HippoRepository.cs" />
      <Compile Include="Assets\Resources\Domain\Preferences.cs" />
+     <Compile Include="Assets\Resources\Domain\Tag.cs" />
      <Compile Include="Assets\Resources\Island\Behaviours\InGameMenuInput.cs" />
      <Compile Include="Assets\Resources\Island\Behaviours\Spawner.cs" />
      <Compile Include="Assets\Resources\Menu\Behaviours\AudioStateSelector.cs" />
