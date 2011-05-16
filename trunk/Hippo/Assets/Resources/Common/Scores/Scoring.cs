@@ -1,11 +1,19 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Scoring : MonoBehaviour 
 {
     private const int boxWidth = 80;
     private const int area = 20;
+	
+	private Hippo[] _hippos;
+	
+	void Awake() {
+		_hippos = new GameRepository().Get().Hippos;
+	}
+	
 
     public void OnGUI()
     {
@@ -16,27 +24,20 @@ public class Scoring : MonoBehaviour
         GUILayout.Box("Score", GUILayout.Width(boxWidth));
 
         GUILayout.EndHorizontal();
-
-        AddPlayer("Player 1:" + HippoRepository.Get("Hippo1").Balls);
-        AddPlayer("Player 2:" + HippoRepository.Get("Hippo2").Balls);
-        AddPlayer("Player 3:" + HippoRepository.Get("Hippo3").Balls);
-        AddPlayer("Player 4:" + HippoRepository.Get("Hippo4").Balls);
-
+		
+		for(var i = 0; i < _hippos.Length; i++) {
+			AddPlayer(String.Format("{0} : {1}", _hippos[i].Identity, _hippos[i].BallsEaten));
+		}
+		
         GUILayout.EndArea();
     }
 
-    public static void AddPlayer(string displayName)
+    public static void AddPlayer(string text)
     {
         GUILayout.BeginHorizontal();
 
-        //if(GUILayout.Button("<", GUILayout.Width(buttonWidth)))
-            //ChangeElement(category, false, anim);
+        GUILayout.Box(text, GUILayout.Width(boxWidth));
 
-        GUILayout.Box(displayName, GUILayout.Width(boxWidth));
-
-        //if(GUILayout.Button(">", GUILayout.Width(buttonWidth)))
-            //ChangeElement(category, true, anim);
-
-        GUILayout.EndHorizontal();
+		GUILayout.EndHorizontal();
     }
 }
