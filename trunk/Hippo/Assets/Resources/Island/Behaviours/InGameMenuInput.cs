@@ -4,8 +4,6 @@ using System.Collections;
 public class InGameMenuInput : MonoBehaviour {
 	private bool _isPaused = false;
 
-	private bool _requested = false;
-	
 	void Update () {
 		if( Input.GetKeyDown (KeyCode.Escape)) {
 			ShowInGameMenu();

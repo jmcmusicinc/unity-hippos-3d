@@ -55,6 +55,7 @@
      <Compile Include="Assets\Engine\Limit.cs" />
      <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\HeadAction.cs" />
      <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\InputAction.cs" />
+     <Compile Include="Assets\Resources\Common\Scores\Scoring.cs" />
      <Compile Include="Assets\Resources\Common\SetAudioLevelByPreferences.cs" />
      <Compile Include="Assets\Resources\Domain\Game.cs" />
      <Compile Include="Assets\Resources\Domain\GameRepository.cs" />
