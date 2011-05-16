@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class InputAction : MonoBehaviour
+public class HippoController : MonoBehaviour
 {
-    public float fireRate = 0.5F;
     public string buttonKeyBinding = "Hippo 1";
 	private AnimationState _hippoAnimState;
     public AnimationClip munchAnimation;
