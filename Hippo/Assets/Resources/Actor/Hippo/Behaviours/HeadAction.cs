@@ -7,7 +7,7 @@ public class HeadAction : MonoBehaviour {
     {
         Debug.Log("Collision");
 
-     
+        HippoRepository.Get("Hippo1").UpdateBalls();
 
         foreach (ContactPoint contact in collision.contacts)
         {

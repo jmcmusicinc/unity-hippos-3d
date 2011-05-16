@@ -1,57 +1,30 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Scoring : MonoBehaviour 
 {
-    bool newCharacterRequested = true;
-    bool firstCharacter = true;
-    string nonLoopingAnimationToPlay;
-
-    const float fadeLength = .6f;
-    const int typeWidth = 80;
-    const int buttonWidth = 20;
-    const string prefName = "Score";
-
-
+    private const int boxWidth = 80;
+    private const int area = 20;
 
     public void OnGUI()
     {
         GUI.enabled = true;
-        GUILayout.BeginArea(new Rect(10, 10, typeWidth + 2 * buttonWidth + 8, 500));
-
-        // Buttons for changing the active character.
+        GUILayout.BeginArea(new Rect(10, 10, 200, 500));
         GUILayout.BeginHorizontal();
 
-        GUILayout.Box("Score", GUILayout.Width(typeWidth));
-
-        //if(GUILayout.Button(">", GUILayout.Width(buttonWidth)))
+        GUILayout.Box("Score", GUILayout.Width(boxWidth));
 
         GUILayout.EndHorizontal();
 
-        // Buttons for changing character elements.
-        AddPlayer("Player 1:");
-        AddPlayer("Player 2:");
-        AddPlayer("Player 3:");
-        AddPlayer("Player 4:");
-
-        // Buttons for saving and deleting configurations.
-        // In a real world application you probably want store these
-        // preferences on a server, but for this demo configurations 
-        // are saved locally using PlayerPrefs.
-        //if(GUILayout.Button("Save Configuration"))
-          //  PlayerPrefs.SetString(prefName, generator.GetConfig());
-
-        //if(GUILayout.Button("Delete Configuration"))
-        //    PlayerPrefs.DeleteKey(prefName);
-
-        // Show download progress or indicate assets are being loaded.
-        GUI.enabled = true;
-
+        AddPlayer("Player 1:" + HippoRepository.Get("Hippo1").Balls);
+        AddPlayer("Player 2:" + HippoRepository.Get("Hippo2").Balls);
+        AddPlayer("Player 3:" + HippoRepository.Get("Hippo3").Balls);
+        AddPlayer("Player 4:" + HippoRepository.Get("Hippo4").Balls);
 
         GUILayout.EndArea();
     }
 
-    // Draws buttons for configuring a specific category of items, like pants or shoes.
     public static void AddPlayer(string displayName)
     {
         GUILayout.BeginHorizontal();
@@ -59,7 +32,7 @@ public class Scoring : MonoBehaviour
         //if(GUILayout.Button("<", GUILayout.Width(buttonWidth)))
             //ChangeElement(category, false, anim);
 
-        GUILayout.Box(displayName, GUILayout.Width(typeWidth));
+        GUILayout.Box(displayName, GUILayout.Width(boxWidth));
 
         //if(GUILayout.Button(">", GUILayout.Width(buttonWidth)))
             //ChangeElement(category, true, anim);
