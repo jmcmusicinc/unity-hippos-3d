@@ -29,15 +29,10 @@ public class Countdown : MonoBehaviour
         GUILayout.EndArea();
 
 
-        if(elapsed <= 198)
+        if(elapsed <= 0)
         {
-            GUILayout.BeginArea(new Rect(500, 500, 300, 500));
-            GUILayout.BeginHorizontal();
-
-            GUILayout.Box("Game Over: " + elapsed, GUILayout.Width(boxWidth), GUILayout.Height(300));
-
-            GUILayout.EndHorizontal();
-            GUILayout.EndArea();
+            var script = GetComponent<EndGame>();
+            script.ShowEndGame(true);
         }
     }
 

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Resources\Actor\Hippo\Behaviours\HippoController.cs" />
      <Compile Include="Assets\Resources\Common\Behaviours\LoadLevelAction.cs" />
      <Compile Include="Assets\Resources\Common\GUI\Countdown.cs" />
+     <Compile Include="Assets\Resources\Common\GUI\EndGame.cs" />
      <Compile Include="Assets\Resources\Common\GUI\Scoring.cs" />
      <Compile Include="Assets\Resources\Common\SetAudioLevelByPreferences.cs" />
      <Compile Include="Assets\Resources\Domain\Game.cs" />
