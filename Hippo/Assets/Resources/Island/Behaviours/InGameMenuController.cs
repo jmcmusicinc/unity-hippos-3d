@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class InGameMenuInput : MonoBehaviour {
+public class InGameMenuController : MonoBehaviour {
 	private bool _isPaused = false;
 
 	void Update () {
