@@ -17,14 +17,28 @@ public class Countdown : MonoBehaviour
 
     public void OnGUI()
     {
+        int elapsed = (countDown - stopwatch.Elapsed.Seconds);
+
         GUI.enabled = true;
         GUILayout.BeginArea(new Rect(150, 10, 200, 500));
         GUILayout.BeginHorizontal();
 
-        GUILayout.Box("Countdown: " + (countDown - stopwatch.Elapsed.Seconds), GUILayout.Width(boxWidth));
+        GUILayout.Box("Countdown: " + elapsed, GUILayout.Width(boxWidth));
 
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
+
+
+        if(elapsed <= 198)
+        {
+            GUILayout.BeginArea(new Rect(500, 500, 300, 500));
+            GUILayout.BeginHorizontal();
+
+            GUILayout.Box("Game Over: " + elapsed, GUILayout.Width(boxWidth), GUILayout.Height(300));
+
+            GUILayout.EndHorizontal();
+            GUILayout.EndArea();
+        }
     }
 
 
