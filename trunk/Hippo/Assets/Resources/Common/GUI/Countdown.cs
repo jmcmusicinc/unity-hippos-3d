@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Diagnostics;
+using System.Timers;
 
 public class Countdown : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Countdown : MonoBehaviour
 
     public void OnGUI()
     {
-        int elapsed = (countDown - stopwatch.Elapsed.Seconds);
+        int elapsed = (countDown - (int)stopwatch.Elapsed.TotalSeconds);
 
         GUI.enabled = true;
         GUILayout.BeginArea(new Rect(150, 10, 200, 500));
