@@ -9,7 +9,7 @@ public class Countdown : MonoBehaviour
     private Stopwatch stopwatch;
     public int countDown;
 
-    void Awake()
+    void Start()
     {
         stopwatch = new Stopwatch();
         stopwatch.Start();
